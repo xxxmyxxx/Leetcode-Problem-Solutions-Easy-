@@ -1,0 +1,20 @@
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow= head;
+        ListNode fast= head;
+
+        while(fast !=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        
+        return slow;
+    
+    }
+}
+
+// Bu bağlı liste için, yukarıdaki kodda belirtilen iki adım atma tekniğini kullanarak ortadaki düğümleri içeren yeni bir bağlı liste oluşturacağız. İlk olarak, slow ve fast adlı iki değişken tanımlayalım. Bu değişkenler, bağlı listenin ortadaki düğümünü bulmak için kullanılacaktır. İlk olarak, slow değişkeni bağlı listenin ilk düğümüne (yani 1'e) ve fast değişkeni de bağlı listenin ikinci düğümüne (yani 2'ye) atanır:
+// slow: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+         ^
+// fast: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+              ^
